@@ -18,6 +18,9 @@
   --portfolio-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
     0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
   --hero-overlay: rgba(47, 48, 58, 0.4);
+  --envelope-hover-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  --icons-bg-footer: rgba(255, 255, 255, 0.1);
+  --clients-icons-border: rgba(175, 177, 184, 1);
 }
 body {
   background-color: var(--body-hero-color);
@@ -119,6 +122,7 @@ header {
 .nav-contacts:focus {
   color: var(--accent-color);
 }
+
 .nav-links {
   color: var(--main-text-color);
   font-weight: 500;
@@ -137,14 +141,31 @@ header {
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 0 auto;
 }
 .icon-envelope {
   width: 16px;
   height: 12px;
+  margin-right: 10px;
+  fill: #757575;
 }
 .icon-phone {
   width: 10px;
   height: 16px;
+  margin-right: 10px;
+  fill: #757575;
+}
+.nav-contacts:focus .icon-envelope,
+.nav-contacts:hover .icon-envelope,
+.nav-contacts.active .icon-envelope,
+.nav-contacts:focus .icon-phone,
+.nav-contacts:hover .icon-phone,
+.nav-contacts.active .icon-phone {
+  fill: var(--accent-color);
+  box-shadow: var(--envelope-hover-color);
 }
 /* hero section */
 
@@ -218,6 +239,19 @@ header {
   font-size: 14px;
   line-height: 1.71;
 }
+.advantages-bg-img {
+  background-color: var(--bnt-bg--color);
+  width: 270px;
+  height: 120px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+.icon-advntages {
+  display: inline-block;
+  width: 70px;
+  height: 70px;
+  margin: 25px 100px;
+}
 /* works */
 
 .section.works {
@@ -236,7 +270,7 @@ header {
 /* our team */
 
 .titles-basic.team {
-  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 .our-team {
   background-color: var(--bnt-bg--color);
@@ -259,19 +293,80 @@ header {
   margin-right: 30px;
 }
 .team-names {
-  padding: 30px 0 10px 0;
+  margin: 30px 0 10px 0;
   text-align: center;
 }
 .team-position {
-  padding-bottom: 30px;
+  margin-bottom: 30px;
   text-align: center;
 }
+.list-icons-social {
+  display: flex;
+  width: 206px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 
+  flex-basis: calc(100% / 4 - 10px);
+}
+.icon-social {
+  display: inline-block;
+  padding: 12px;
+  margin-right: 10px;
+}
+.icon-social:hover {
+  width: 44px;
+  height: 44px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.icon-social:hover .icon-logo-social {
+  fill: var(--body-hero-color);
+}
+.list-icons-social svg {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.icon-logo-social {
+  fill: #afb1b8;
+}
+
+/* clients */
+
+.titles-basic.clients {
+  margin-bottom: 50px;
+}
+.list-clients {
+  display: flex;
+  flex-basis: calc(100% / 6 - 150px);
+}
+.link-clients {
+  display: flex;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--clients-icons-border);
+  border-radius: 4px;
+  margin-right: 30px;
+}
+.icon-clients {
+  display: inline-block;
+  margin: auto;
+}
+.link-clients:hover {
+  border: 1px solid var(--accent-color);
+}
 /* footer */
 
 .footer {
   background-color: var(--footer-header);
-  padding: 60px;
+  padding: 60px 0;
+}
+.down-footer {
+  display: flex;
 }
 .logo.down {
   margin-bottom: 20px;
@@ -290,7 +385,34 @@ address {
 .nav-contacts.down {
   margin-bottom: 9px;
 }
+.footer-social {
+  margin-left: 70px;
+}
+.footer-title-social {
+  color: var(--body-hero-color);
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.14;
+  text-transform: uppercase;
 
+  margin-bottom: 20px;
+}
+.icon-social.footer-down {
+  width: 44px;
+  height: 44px;
+  background-color: var(--icons-bg-footer);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.icon-social.footer-down svg {
+  fill: var(--body-hero-color);
+}
+.icon-social.footer-down:hover {
+  background-color: var(--accent-color);
+}
 /* second page Portfolio */
 
 .portfolio-second {
@@ -352,6 +474,7 @@ address {
 }
 .portfolio-list:hover {
   box-shadow: var(--portfolio-shadow);
+  cursor: pointer;
 }
 /* .portfolio-list {
   margin-bottom: 30px;
