@@ -21,6 +21,7 @@
   --envelope-hover-color: 0px 4px 4px rgba(0, 0, 0, 0.25);
   --icons-bg-footer: rgba(255, 255, 255, 0.1);
   --clients-icons-border: rgba(175, 177, 184, 1);
+  --icons-color: rgb(175, 177, 184);
 }
 body {
   background-color: var(--body-hero-color);
@@ -52,6 +53,8 @@ ul li {
   list-style: none;
 }
 .titles-basic {
+  font-size: 36px;
+  line-height: 1.17;
   text-align: center;
 }
 .section {
@@ -240,6 +243,7 @@ header {
   line-height: 1.71;
 }
 .advantages-bg-img {
+  display: flex;
   background-color: var(--bnt-bg--color);
   width: 270px;
   height: 120px;
@@ -247,10 +251,11 @@ header {
   border-radius: 4px;
 }
 .icon-advntages {
-  display: inline-block;
+  justify-content: center;
+  text-align: center;
   width: 70px;
   height: 70px;
-  margin: 25px 100px;
+  margin: auto;
 }
 /* works */
 
@@ -310,10 +315,12 @@ header {
 }
 .icon-social {
   display: inline-block;
+
   padding: 12px;
   margin-right: 10px;
 }
-.icon-social:hover {
+.icon-social:hover,
+.icon-social:focus {
   width: 44px;
   height: 44px;
   background-color: var(--accent-color);
@@ -323,7 +330,8 @@ header {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
 }
-.icon-social:hover .icon-logo-social {
+.icon-social:hover .icon-logo-social,
+.icon-social:focus .icon-logo-social {
   fill: var(--body-hero-color);
 }
 .list-icons-social svg {
@@ -332,7 +340,7 @@ header {
   height: 20px;
 }
 .icon-logo-social {
-  fill: #afb1b8;
+  fill: var(--icons-color);
 }
 
 /* clients */
@@ -355,9 +363,15 @@ header {
 .icon-clients {
   display: inline-block;
   margin: auto;
+  fill: var(--icons-color);
 }
-.link-clients:hover {
+.link-clients:hover,
+.link-clients:focus {
   border: 1px solid var(--accent-color);
+}
+.link-clients:hover .icon-clients,
+.link-clients:focus .icon-clients {
+  fill: var(--accent-color);
 }
 /* footer */
 
@@ -367,6 +381,7 @@ header {
 }
 .down-footer {
   display: flex;
+  align-items: baseline;
 }
 .logo.down {
   margin-bottom: 20px;
@@ -410,7 +425,8 @@ address {
 .icon-social.footer-down svg {
   fill: var(--body-hero-color);
 }
-.icon-social.footer-down:hover {
+.icon-social.footer-down:hover,
+.icon-social.footer-down:focus {
   background-color: var(--accent-color);
 }
 /* second page Portfolio */
@@ -472,10 +488,16 @@ address {
 .portfolio-list img {
   max-width: 100%;
 }
-.portfolio-list:hover {
+.portfolio-link {
+  text-decoration: none;
+  color: inherit;
+}
+.portfolio-link:hover .portfolio-card,
+.portfolio-link:focus .portfolio-card {
   box-shadow: var(--portfolio-shadow);
   cursor: pointer;
 }
+
 /* .portfolio-list {
   margin-bottom: 30px;
 }
